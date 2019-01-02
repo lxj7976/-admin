@@ -1,0 +1,30 @@
+@bgRightColor:#eee;
+@bgHeadColor:#ffff;
+.home{
+    display: flex;
+    height: 100vh;
+    width:100vw;
+    .left{
+        height: 100%;
+        background: hsl(209, 100%, 8%);
+    }
+    .right{
+        flex:1;
+        background: @bgRightColor;
+        #head{
+            background: @bgHeadColor;
+        }
+        #center{
+           
+                width:95%;
+                min-height: 65vh;
+                background: #fff;   
+                margin: 30px auto;
+              
+        }
+        #foot{
+           
+        }
+       
+    }
+}

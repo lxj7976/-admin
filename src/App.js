@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import Nav from "./components/NavLeft/NavLeft"
+import Home from "./pages/Home/home"
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Nav/>
+        <Home />
       </div>
     );
   }
