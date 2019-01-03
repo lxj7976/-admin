@@ -12,22 +12,19 @@ class Sider extends React.Component {
   componentWillMount(){
     console.log(NavList);
   }
-  renderMenuItem(){
-    NavList.map((item,index)=>{
+  renderNav(){
+    return this.renderMenuItem(NavList)
+  }
+  renderMenuItem(arr){
+    return arr.map((item,index)=>{
       if(item.children){
-        return  <SubMenu key="sub2" title={<span><Icon type="appstore" /><span>Navigation Two</span></span>}>
-                  <Menu.Item key="5">Option 5</Menu.Item>
-                  <Menu.Item key="6">Option 6</Menu.Item>
-                  <SubMenu key="sub3" title="Submenu">
-                    <Menu.Item key="7">Option 7</Menu.Item>
-                    <Menu.Item key="8">Option 8</Menu.Item>
+        return  (
+                  <SubMenu key={item.path} title={item.title}>
+                      {this.renderMenuItem(item.children)}
                   </SubMenu>
-                </SubMenu>
+                )
       }else{
-        return <MenuItemGroup key="g1" title="Item 1">
-                  <Menu.Item key="1">Option 1</Menu.Item>
-                  <Menu.Item key="2">Option 2</Menu.Item>
-                </MenuItemGroup>
+        return  <Menu.Item key={item.path}>{item.title}</Menu.Item>
       }
       
     })
@@ -47,7 +44,7 @@ class Sider extends React.Component {
           defaultOpenKeys={['sub1']}
           mode="inline"
         >
-          {this.renderMenuItem()}
+          {this.renderNav()}
           {/* <SubMenu key="sub1" title={<span><Icon type="mail" /><span>Navigation One</span></span>}>
             <MenuItemGroup key="g1" title="Item 1">
               <Menu.Item key="1">Option 1</Menu.Item>
