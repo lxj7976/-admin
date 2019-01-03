@@ -2,12 +2,19 @@ import React from "react"
 import "./head.less"
 import {Button, Breadcrumb, Icon} from 'antd'
 class Header extends React.Component{
+    exit=()=>{
+        
+        this.props.route.history.push('/login')
+    }
+    // componentWillMount(){
+    //     console.log(this.props.route)
+    // }
     render(){
         return (
             <div className='head'>
                 <div className='top'>
                     <span>欢迎XXX</span>
-                    <Button type='danger'>退出</Button>
+                    <Button type='danger' onClick={this.exit}>退出</Button>
                 </div>
                 <div className='bottom'>
                     <Breadcrumb>
@@ -19,7 +26,7 @@ class Header extends React.Component{
                         <span>Application List</span>
                         </Breadcrumb.Item>
                         <Breadcrumb.Item>
-                        Application
+                            Application
                         </Breadcrumb.Item>
                     </Breadcrumb>
                 </div>
