@@ -21,6 +21,24 @@ const navList = [{
     ]
   },
   {
+    title:'统计图',
+    path:'/admin/echarts',
+    children:[
+      {
+        title:'条形图',
+        path:'/admin/echarts/bar'
+      }, 
+      {
+        title:'饼状图',
+        path:'/admin/echarts/pie'
+      },
+      {
+        title:'折线',
+        path:'/admin/echarts/line'
+      }
+    ]
+  },
+  {
     title:'用户管理',
     path:'/admin/user'
   }

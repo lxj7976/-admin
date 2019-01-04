@@ -19,7 +19,7 @@ class Home extends React.Component{
                     <div id="head">
                         <Head route={this.props.route}></Head>
                     </div>
-                    <div>
+                    <div id="center">
                         {this.props.children}
                     </div>
                     <div id='foot'>
