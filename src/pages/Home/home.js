@@ -7,7 +7,7 @@ import './index.less'
 
 class Home extends React.Component{
     componentWillMount(){
-        console.log(this.props.route.match.params.id)
+        // console.log(this.props.route.match.params.id)
     }
     render(){
         return(
